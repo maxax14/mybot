@@ -1,0 +1,4 @@
+django
+gunicorn
+django-heroku
+© 2019 GitHub, Inc.
