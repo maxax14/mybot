@@ -128,7 +128,32 @@ def start(message):
             else:
                 bot.send_message(message.chat.id, f + "\n" + "\n" + const.ch + "\n" + '\n' + const.setings['Окончание'] + "\n", parse_mode='Markdown')
 
+#сообщение готовности
+                
+                bot.send_message(message.chat.id, const.setings['Готовность'], parse_mode='Markdown')
+                bot.send_message(message.chat.id, '''Каналов в меге: {ch}'''.format(ch = len(const.megaac)))
+                
+                	
+            
+                                    
+#вытягиваем юзер и отправляем                
+                
+                for huinya in const.megaac:
+                	chuser = re.findall(r'\(.+?\.me/(.+?)\)', huinya)
+                	         	
+                	aaa = "@{ch}".format(ch = chuser[0])
+                	
+                	
+                	try:
+                		bot.send_message(aaa, f + "\n" + "\n" + const.ch + "\n" + '\n' + const.setings['Окончание'] + "\n", parse_mode='Markdown')
+                		bot.send_message(message.from_user.id,  '''Каналов в меге: {kolvo}
+Мега разослана на: {razos}
+Попыток сделано: {kolvo}'''.format(kolvo = len(const.megaac), razos = len(chuser)))
                 		
+                		
+    		            		              		            		              		
+                	except telebot.apihelper.ApiException as exc:
+                		print('SYSTEM ERROR')                		
                 
                                                 
 #сообщение готовности
