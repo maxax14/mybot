@@ -136,7 +136,7 @@ def start(message):
 def start(message):
     bot.send_message (message.chat.id, const.list_chan)
     
-    
+
 @bot.message_handler(commands=['add_auto'])
 def start(message):
 	bot.send_message (message.from_user.id, '''' Привет, я бот меги @acorporation!
